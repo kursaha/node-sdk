@@ -28,4 +28,22 @@ export class EngageDataDriveClient {
         });
     }
 
+    checkConnection() {
+        this.client.get('shopify/ping').then((value) => {
+            console.log('post signal response', value);
+        })
+    }
+
+    getAllEventFlow() {
+        this.client.get('shopify/event-flows').then((value) => {
+            console.log('post signal response', value);
+        })
+    }
+
+    getEventFlowDetails(id) {
+        this.client.get(`shopify/event-flows/${id}`).then((value) => {
+            console.log('post signal response', value);
+        })
+    }
+
 }
