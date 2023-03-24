@@ -11,3 +11,5 @@ export class KursahaClient {
         this.mk = new MailkeetsClient(this.MAILKEETS_BASE_URL, apiKey);
     }
 }
+
+export default KursahaClient;
