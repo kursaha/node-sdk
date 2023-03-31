@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class EngageDataDriveClient {
     private client: AxiosInstance;
-    constructor(baseUrl, apiKey) {
+    constructor(baseUrl: string, apiKey: string) {
         this.client = axios.create({
             baseURL: baseUrl,
             timeout: 1000,
@@ -13,9 +13,9 @@ export class EngageDataDriveClient {
         });
     }
 
-    signal(identifier, stepNodeId, emitterId): void {
+    signal(identifier: string, stepNodeId: string, emitterId: string): void {
         const signalPayload: SignalPayload = new SignalPayload(emitterId, stepNodeId, null, identifier);
-        this.sendEventFlow(new Array(signalPayload)).then(value => {
+        this.sendEventFlow(new Array(signalPayload)).then(_ => {
             // ignore
         });
     }
