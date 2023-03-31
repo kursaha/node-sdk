@@ -1,6 +1,6 @@
 export class EventflowRequest {
     requestIdentifier : string;
-    signals: Array[SignalPayload];
+    signals: Array<SignalPayload>;
     constructor(requestIdentifier, signals) {
         this.requestIdentifier = requestIdentifier;
         this.signals = signals;
