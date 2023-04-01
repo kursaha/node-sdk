@@ -24,3 +24,14 @@ export class SignalPayload {
 export class PingResponse {
   response?: string
 }
+
+export class EventflowResponse {
+  id?: number
+  identifier?: string
+  name?: string
+}
+
+export class EventflowDetails {
+  stepNodeId?: string
+  stepNodeName?: string
+}
