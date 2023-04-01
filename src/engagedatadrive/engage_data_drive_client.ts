@@ -30,12 +30,12 @@ export class EngageDataDriveClient {
   }
 
   async getAllEventFlow(): Promise<[EventflowResponse]> {
-    const response = await this.client.get<[EventflowResponse]>('sdk/event-flows');
-    return response.data;
+    const response = await this.client.get<[EventflowResponse]>('sdk/event-flows')
+    return response.data
   }
 
   async getEventFlowDetails(eventFlowId: number): Promise<[EventflowDetails]> {
-    const response = await this.client.get<[EventflowDetails]>(`sdk/event-flows/${eventFlowId}`);
-    return response.data;
+    const response = await this.client.get<[EventflowDetails]>(`sdk/event-flows/${eventFlowId}`)
+    return response.data
   }
 }
