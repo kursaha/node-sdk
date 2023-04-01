@@ -29,4 +29,6 @@ jobs:
     - name: Run build and test
       env:
         KURSAHA_KEY: ${secrets.PROD_KEY}
-      run: yarn prepublishOnly
+      run: |
+        yarn install
+        yarn prepublishOnly
