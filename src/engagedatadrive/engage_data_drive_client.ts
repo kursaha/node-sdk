@@ -9,7 +9,7 @@ export class EngageDataDriveClient {
     this.client = axios.create({
       baseURL: baseUrl,
       timeout: 60_000,
-      headers: { Authorization: 'Bearer ' + apiKey, Accept: 'application/json', 'Access-Control-Allow-Origin': '*' },
+      headers: { Authorization: 'Bearer ' + apiKey, Accept: 'application/json' },
     })
   }
 

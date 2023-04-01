@@ -11,7 +11,7 @@
     "README.md"
   ],
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=14"
   },
   "scripts": {
     "prepare": "npm run build",
