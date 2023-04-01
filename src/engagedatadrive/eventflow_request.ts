@@ -8,9 +8,9 @@ export class EventflowRequest {
 }
 
 export class SignalPayload {
-  emitterId: string
-  stepNodeId: string
-  data: any
+  emitterId?: string
+  stepNodeId?: string
+  data?: any
   eventflowIdentifier: string
 
   constructor(emitterId: string, stepNodeId: string, data: any, eventflowIdentifier: string) {
@@ -19,4 +19,8 @@ export class SignalPayload {
     this.data = data
     this.eventflowIdentifier = eventflowIdentifier
   }
+}
+
+export class PingResponse {
+  response?: string
 }
