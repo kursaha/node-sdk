@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
-import { EventflowRequest, PingResponse, SignalPayload } from './eventflow_request'
+import { EventflowDetails, EventflowRequest, EventflowResponse, PingResponse, SignalPayload } from './eventflow_request'
 import { v4 as uuidv4 } from 'uuid'
 
 export class EngageDataDriveClient {
@@ -29,11 +29,13 @@ export class EngageDataDriveClient {
     return response.data
   }
 
-  getAllEventFlow(): Promise<AxiosResponse<any>> {
-    return this.client.get('sdk/event-flows')
+  async getAllEventFlow(): Promise<[EventflowResponse]> {
+    const response = await this.client.get<[EventflowResponse]>('sdk/event-flows')
+    return response.data
   }
 
-  getEventFlowDetails(id: number): Promise<AxiosResponse<any>> {
-    return this.client.get(`sdk/event-flows/${id}`)
+  async getEventFlowDetails(eventFlowId: number): Promise<[EventflowDetails]> {
+    const response = await this.client.get<[EventflowDetails]>(`sdk/event-flows/${eventFlowId}`)
+    return response.data
   }
 }
