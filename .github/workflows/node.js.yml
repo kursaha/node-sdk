@@ -28,7 +28,7 @@ jobs:
         cache: 'yarn'
     - name: Run build and test
       env:
-        KURSAHA_KEY: ${secrets.PROD_KEY}
+        KURSAHA_KEY: ${{ secrets.PROD_KEY }}
       run: |
         echo "Got key as ${KURSAHA_KEY}"
         yarn install
