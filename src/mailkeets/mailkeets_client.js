@@ -4,7 +4,7 @@ export class MailkeetsClient {
   constructor(baseUrl, apiKey) {
     this.client = axios.create({
       baseURL: baseUrl,
-      timeout: 1000,
+      timeout: 60_000,
       headers: { Authorization: 'Bearer ' + apiKey },
     })
   }
