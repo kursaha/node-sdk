@@ -18,6 +18,6 @@ test('event flow list test', async () => {
 test('event flow details test', async () => {
   const apiKey = process.env.KURSAHA_KEY
   const kClient: KursahaClient = new KursahaClient(apiKey)
-  const res: [EventflowDetails] = await kClient.edd.getEventFlowDetails(3)
+  const res: [EventflowDetails] = await kClient.edd.getEventFlowDetails(33)
   expect(res.length).toBeGreaterThan(0)
 })
