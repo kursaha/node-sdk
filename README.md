@@ -53,14 +53,7 @@ const signal = {
   eventflowIdentifier: 'uuid',
 }
 
-kursahaClient
-  .sendSignal(signal)
-  .then((response) => {
-    console.log('Signal sent successfully:', response)
-  })
-  .catch((error) => {
-    console.error('Error sending signal:', error)
-  })
+kursahaClient.signal(signal)
 ```
 
 ### Sending Customer Data
@@ -84,17 +77,12 @@ const customerData = {
   },
 }
 
-kursahaClient
-  .sendCustomerData(customerData)
-  .then((response) => {
-    console.log('Customer data sent successfully:', response)
-  })
-  .catch((error) => {
-    console.error('Error sending customer data:', error)
-  })
+kursahaClient.sendCustomerData(customerData)
 ```
 
 ### Sending Events
+
+<!-- check here -->
 
 Transmit events to Kursaha to track user actions and interactions within your application.
 
