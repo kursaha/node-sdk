@@ -1,6 +1,6 @@
 {
   "name": "kursaha-sdk",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Nodejs library for Kursaha",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -14,7 +14,6 @@
     "react": ">=14"
   },
   "scripts": {
-    "start": "node ./src/index.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
     "test": "jest --config jestconfig.json",
