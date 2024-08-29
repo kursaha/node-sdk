@@ -31,7 +31,7 @@ export class EngageDataDriveClient {
   }
 
   signal(identifier: string, stepNodeId: string, emitterId: string): void {
-    const signalPayload: SignalPayload = new SignalPayload(emitterId, stepNodeId, null, identifier)
+    const signalPayload: SignalPayload = new SignalPayload(emitterId, stepNodeId, {}, identifier)
     this.sendEventFlow(new Array(signalPayload)).then()
   }
 
@@ -43,7 +43,7 @@ export class EngageDataDriveClient {
 
   sendCustomerData(customerId: string, customerData: CustomerDataPayload): Promise<AxiosResponse<any>> {
     const requestDto: SendCustomerDataPayload = new SendCustomerDataPayload(customerId, customerData)
-    return this.client.post('customers', requestDto)
+    return this.client.patch('customers', requestDto)
   }
 
   async checkConnection(): Promise<PingResponse> {
