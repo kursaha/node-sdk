@@ -10,7 +10,7 @@ export class EventflowRequest {
 export class SignalPayload {
   emitterId?: string
   stepNodeId?: string
-  data?: any
+  data: any
   eventflowIdentifier: string
 
   constructor(emitterId: string, stepNodeId: string, data: any, eventflowIdentifier: string) {
