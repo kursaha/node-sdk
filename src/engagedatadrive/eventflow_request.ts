@@ -35,3 +35,50 @@ export class EventflowDetails {
   stepNodeId?: string
   stepNodeName?: string
 }
+
+export class SendCustomerDataPayload {
+  customerId: string
+  customerData: CustomerDataPayload
+
+  constructor(customerId: string, customerData: CustomerDataPayload) {
+    this.customerId = customerId
+    this.customerData = customerData
+  }
+}
+
+export class CustomerDataPayload {
+  email: string
+  phoneNumber: string
+  firstName: string
+  lastName: string
+  gender?: string
+  dob?: string
+  city?: string
+  state?: string
+  country?: string
+  zip?: string
+
+  constructor(
+    email: string,
+    phoneNumber: string,
+    firstName: string,
+    lastName: string,
+    gender: string,
+    dob: string,
+    city: string,
+    state: string,
+    country: string,
+    zip: string,
+  ) {
+    this.email = email
+    this.phoneNumber = phoneNumber
+    this.firstName = firstName
+    this.lastName = lastName
+    this.gender = gender
+    this.dob = dob
+    this.city = city
+    this.state = state
+    this.country = country
+    this.zip = zip
+  }
+}
