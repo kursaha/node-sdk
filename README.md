@@ -82,8 +82,6 @@ kursahaClient.sendCustomerData(customerData)
 
 ### Sending Events
 
-<!-- check here -->
-
 Transmit events to Kursaha to track user actions and interactions within your application.
 
 ```javascript
