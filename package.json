@@ -13,6 +13,12 @@
   "peerDependencies": {
     "react": ">=14"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/cjs/kursaha_client.js",
+      "types": "./dist/cjs/kursaha_client.d.ts"
+    }
+  },
   "scripts": {
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
