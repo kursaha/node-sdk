@@ -19,7 +19,7 @@ Welcome to the Kursaha Node.js SDK! This SDK provides a seamless way to integrat
 To get started, install the Kursaha SDK via npm:
 
 ```bash
-npm install kursaha-sdk
+npm install kursaha-sdk --save
 ```
 
 ## Getting Started
@@ -47,8 +47,8 @@ Send a signal to start an event flow. This method allows you to track various ev
 
 ```javascript
 const signal = {
-  customerId: 'unique-emitter-id',
-  eventType: 'step-node-id',
+  customerId: 'unique-customer-id',
+  eventType: 'eventType',
   data: {},
   eventflowIdentifier: 'uuid',
 }
