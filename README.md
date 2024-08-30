@@ -29,6 +29,10 @@ npm install kursaha-sdk --save
    First, require and configure the Kursaha SDK in your application. You need to provide your API key to authenticate with the Kursaha platform.
 
    ```javascript
+   ...
+   import KursahaClient from "kursaha-sdk";
+   ...
+
    const Kursaha = require('kursaha-sdk')
 
    // Initialize the SDK with your API key
@@ -47,10 +51,10 @@ Send a signal to start an event flow. This method allows you to track various ev
 
 ```javascript
 const signal = {
-  customerId: 'unique-customer-id',
-  eventType: 'eventType',
+  customerId: '<unique-customer-id>',
+  eventType: '<event-type>',
   data: {},
-  eventflowIdentifier: 'uuid',
+  eventflowIdentifier: '<uuid>',
 }
 
 kursahaClient.signal(signal)
@@ -62,7 +66,7 @@ Send customer data to Kursaha to keep your records up-to-date and enhance your c
 
 ```javascript
 const customerData = {
-  customerId: '<Unique-customer-id>',
+  customerId: '<unique-customer-id>',
   customerData: {
     email: 'j.doe@swq.com',
     phoneNumber: '+911002220000',
@@ -86,7 +90,7 @@ Transmit events to Kursaha to track user actions and interactions within your ap
 
 ```javascript
 const event = {
-  customerId: '<Unique-customer-id>',
+  customerId: '<unique-customer-id>',
   eventType: '<event-type>',
   data: {
     price: 200,
