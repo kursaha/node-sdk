@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
@@ -25,11 +23,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-    - name: Run build and test
+        cache: 'npm'
+    - name: Running build and test
       env:
         KURSAHA_KEY: ${{ secrets.PROD_KEY }}
       run: |
-        echo "Got key as ${KURSAHA_KEY}"
-        yarn install
-        yarn prepublishOnly
+        npm install
+        npm run build
+        npm run prepublishOnly

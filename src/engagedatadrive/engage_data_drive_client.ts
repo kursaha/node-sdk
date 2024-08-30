@@ -1,5 +1,13 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios'
-import { EventflowDetails, EventflowRequest, EventflowResponse, PingResponse, SignalPayload } from './eventflow_request'
+import {
+  EventflowDetails,
+  EventflowRequest,
+  EventflowResponse,
+  PingResponse,
+  SendCustomerDataPayload,
+  SignalPayload,
+  CustomerDataPayload,
+} from './eventflow_request'
 import { v4 as uuidv4 } from 'uuid'
 import axiosRetry from 'axios-retry'
 
@@ -22,8 +30,8 @@ export class EngageDataDriveClient {
     })
   }
 
-  signal(identifier: string, stepNodeId: string, emitterId: string): void {
-    const signalPayload: SignalPayload = new SignalPayload(emitterId, stepNodeId, null, identifier)
+  signal(identifier: string, eventType: string, CustomerId: string): void {
+    const signalPayload: SignalPayload = new SignalPayload(CustomerId, eventType, {}, identifier)
     this.sendEventFlow(new Array(signalPayload)).then()
   }
 
@@ -31,6 +39,11 @@ export class EngageDataDriveClient {
     const requestIdentifier: string = uuidv4()
     const requestDto: EventflowRequest = new EventflowRequest(requestIdentifier.toString(), signals)
     return this.client.post('event-flows/signal', requestDto)
+  }
+
+  sendCustomerData(customerId: string, customerData: CustomerDataPayload): Promise<AxiosResponse<any>> {
+    const requestDto: SendCustomerDataPayload = new SendCustomerDataPayload(customerId, customerData)
+    return this.client.patch('customers', requestDto)
   }
 
   async checkConnection(): Promise<PingResponse> {
