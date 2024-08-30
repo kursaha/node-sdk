@@ -29,5 +29,5 @@ jobs:
         KURSAHA_KEY: ${{ secrets.PROD_KEY }}
       run: |
         npm install
-        npm build
+        npm run build
         npm run prepublishOnly
