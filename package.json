@@ -5,6 +5,12 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "files": [
     "dist",
     "LICENSE",
@@ -13,17 +19,11 @@
   "peerDependencies": {
     "react": ">=14"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/cjs/kursaha_client.js",
-      "types": "./dist/cjs/kursaha_client.d.ts"
-    }
-  },
   "scripts": {
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
     "test": "jest --config jestconfig.json",
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",

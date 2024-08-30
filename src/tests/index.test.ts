@@ -1,5 +1,5 @@
 import { EventflowDetails, EventflowResponse, PingResponse } from '../engagedatadrive/eventflow_request'
-import KursahaClient from '../kursaha_client'
+import KursahaClient from '..'
 
 test('connection test', async () => {
   const apiKey = process.env.KURSAHA_KEY
