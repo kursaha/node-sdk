@@ -30,8 +30,8 @@ export class EngageDataDriveClient {
     })
   }
 
-  signal(identifier: string, stepNodeId: string, emitterId: string): void {
-    const signalPayload: SignalPayload = new SignalPayload(emitterId, stepNodeId, {}, identifier)
+  signal(identifier: string, eventType: string, CustomerId: string): void {
+    const signalPayload: SignalPayload = new SignalPayload(CustomerId, eventType, {}, identifier)
     this.sendEventFlow(new Array(signalPayload)).then()
   }
 

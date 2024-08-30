@@ -47,8 +47,8 @@ Send a signal to start an event flow. This method allows you to track various ev
 
 ```javascript
 const signal = {
-  emitterId: 'unique-emitter-id',
-  stepNodeId: 'step-node-id',
+  customerId: 'unique-emitter-id',
+  eventType: 'step-node-id',
   data: {},
   eventflowIdentifier: 'uuid',
 }
@@ -82,7 +82,7 @@ kursahaClient.sendCustomerData(customerData)
 
 ### Sending Events
 
-Transmit events to Kursaha to track user actions and interactions within your application.
+Transmit events to Kursaha to track user actions and interactions within your application. These actions will be recoreded in cohort.
 
 ```javascript
 const event = {
