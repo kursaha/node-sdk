@@ -19,7 +19,7 @@ Welcome to the Kursaha Node.js SDK! This SDK provides a seamless way to integrat
 To get started, install the Kursaha SDK via npm:
 
 ```bash
-npm install kursaha-sdk
+npm install kursaha-sdk --save
 ```
 
 ## Getting Started
@@ -46,21 +46,14 @@ npm install kursaha-sdk
 Send a signal to start an event flow. This method allows you to track various events within your application.
 
 ```javascript
-const signal = {
-  emitterId: 'unique-emitter-id',
-  stepNodeId: 'step-node-id',
-  data: {},
-  eventflowIdentifier: 'uuid',
-}
+// const signal = {
+//   customerId: '<unique-customer-id>',
+//   eventType: '<event-type>' ,
+//   data: {},
+//   eventflowIdentifier: '<uuid>',
+// }
 
-kursahaClient
-  .sendSignal(signal)
-  .then((response) => {
-    console.log('Signal sent successfully:', response)
-  })
-  .catch((error) => {
-    console.error('Error sending signal:', error)
-  })
+kursahaClient.signal('<unique-customer-id>', '<event-type>', {}, '<uuid>')
 ```
 
 ### Sending Customer Data
@@ -69,7 +62,7 @@ Send customer data to Kursaha to keep your records up-to-date and enhance your c
 
 ```javascript
 const customerData = {
-  customerId: '<Unique-customer-id>',
+  customerId: '<unique-customer-id>',
   customerData: {
     email: 'j.doe@swq.com',
     phoneNumber: '+911002220000',
@@ -84,23 +77,16 @@ const customerData = {
   },
 }
 
-kursahaClient
-  .sendCustomerData(customerData)
-  .then((response) => {
-    console.log('Customer data sent successfully:', response)
-  })
-  .catch((error) => {
-    console.error('Error sending customer data:', error)
-  })
+kursahaClient.sendCustomerData(customerData)
 ```
 
 ### Sending Events
 
-Transmit events to Kursaha to track user actions and interactions within your application.
+Transmit events to Kursaha to track user actions and interactions within your application. These actions will be recoreded in cohort.
 
 ```javascript
 const event = {
-  customerId: '<Unique-customer-id>',
+  customerId: '<unique-customer-id>',
   eventType: '<event-type>',
   data: {
     price: 200,

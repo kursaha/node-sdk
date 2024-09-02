@@ -8,14 +8,14 @@ export class EventflowRequest {
 }
 
 export class SignalPayload {
-  emitterId?: string
-  stepNodeId?: string
-  data?: any
-  eventflowIdentifier: string
+  customerId: string
+  eventType: string
+  data: any
+  eventflowIdentifier?: string
 
-  constructor(emitterId: string, stepNodeId: string, data: any, eventflowIdentifier: string) {
-    this.emitterId = emitterId
-    this.stepNodeId = stepNodeId
+  constructor(customerId: string, eventType: string, data: any, eventflowIdentifier: string) {
+    this.customerId = customerId
+    this.eventType = eventType
     this.data = data
     this.eventflowIdentifier = eventflowIdentifier
   }
