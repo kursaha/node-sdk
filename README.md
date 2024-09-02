@@ -27,10 +27,18 @@ npm install kursaha-sdk --save
 1. **Initialize the SDK**
 
    First, require and configure the Kursaha SDK in your application. You need to provide your API key to authenticate with the Kursaha platform.
+   In Javascript file:
 
    ```javascript
-   const Kursaha = require('kursaha-sdk')
+   var Kursaha = require('kursaha-sdk')
+   // Initialize the SDK with your API key
+   var kursahaClient = new Kursaha('<YOUR-API-KEY>')
+   ```
 
+   In Typescript file:
+
+   ```javascript
+   import Kursaha from 'kursaha-sdk'
    // Initialize the SDK with your API key
    const kursahaClient = new Kursaha('<YOUR-API-KEY>')
    ```
@@ -124,3 +132,7 @@ If you encounter any issues or need assistance, feel free to reach out to our su
 ---
 
 Thank you for using the Kursaha Node.js SDK. We look forward to helping you enhance your application's event tracking and customer data management!
+
+```
+
+```
