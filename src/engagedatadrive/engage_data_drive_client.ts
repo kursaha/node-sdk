@@ -43,11 +43,7 @@ export class EngageDataDriveClient {
 
   sendCustomerData(customerId: string, customerData: CustomerDataPayload): Promise<AxiosResponse<any>> {
     const requestDto: SendCustomerDataPayload = new SendCustomerDataPayload(customerId, customerData)
-<<<<<<< HEAD
-    return this.client.post('customers', requestDto)
-=======
     return this.client.patch('customers', requestDto)
->>>>>>> e992545c47d2989a1fe71e03a46b90692d6fec97
   }
 
   async checkConnection(): Promise<PingResponse> {
