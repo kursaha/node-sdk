@@ -20,6 +20,7 @@
     "react": ">=14"
   },
   "scripts": {
+    "start": "node ./src/index.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
     "test": "jest --config jestconfig.json",
